@@ -211,5 +211,5 @@ First we must download the template notebook repository with ``git``.
 Final notes
 -----------
 
-The environment is **temprorary**. Download all results when you are
+The environment is **temporary**. Download all results when you are
 finished.
