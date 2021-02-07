@@ -189,6 +189,9 @@ First we must download the template notebook repository with ``git``.
 
 4. Copy the ``network.ipynb`` to your working folder.
 
+   -  Right click file to Copy.
+   -  Right click in directory to Paste.
+
 5. Double-click on the ``network.ipynb`` notebook file in your working
    folder.
 
