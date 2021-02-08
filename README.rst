@@ -1,20 +1,22 @@
 Guide for setting up a fractopo environment on notebooks.csc.fi
 ===============================================================
 
-Requires University of Turku credentials. Usage is not officially
-supported.
+Requires University of Turku or GTK credentials. Usage is not officially
+supported by CSC.
 
 Setup
 -----
 
 1. Go to notebooks.csc.fi and log in with University of Turku
-   credentials.
+   credentials or GTK-credentials.
 
    -  *Haka Login* -> *University of Turku* -> *Select*
+   -  *Virtu* -> *Government Identification Service* -> *Select*
 
-2. Click on Launch new below Geo-Python Lite heading. This will start a
-   new temporary Python notebook environment. The initialization will
-   take some seconds.
+2. Click on Launch new below ``Course Practical Deep Learning - 2020``
+   or ``Geo-Python Lite`` heading. This will start a new temporary
+   Python notebook environment (Prefer Geo-Python if available). The
+   initialization will take some seconds.
 3. Click on ``Open in browser`` after the link has popped up under
    Access column.
 4. Copy the password presented and proceed (proceeding will also
@@ -132,13 +134,12 @@ instead be done from the terminal, the same window we used to install
    -  Press Enter to run the command (as usual).
 
 5. The tool will create a new folder in the same folder as the trace
-   data with the validated data when finished. 
+   data with the validated data when finished.
 
    -  Folder name is ``validated_DAY_MONTH_YEAR_HOUR_MIN``.
-
-   -  You should look at the
-      summary data printed on the terminal screen after the tool has
-      finished to determine if and how the data is invalid.
+   -  You should look at the summary data printed on the terminal screen
+      after the tool has finished to determine if and how the data is
+      invalid.
 
 6. Fixing validated data should be done on your GIS-software of choice.
 
@@ -184,8 +185,8 @@ First we must download the template notebook repository with ``git``.
 
 3. Navigate to the ``fractopo-help`` directory by double-clicking.
 
-   -  You can press the small folder icon to return to base working directory
-      if you've navigated to some other folder already.
+   -  You can press the small folder icon to return to base working
+      directory if you've navigated to some other folder already.
 
 4. Copy the ``network.ipynb`` to your working folder.
 
