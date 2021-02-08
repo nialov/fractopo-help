@@ -91,13 +91,13 @@ instead be done from the terminal, the same window we used to install
 
    .. code:: bash
 
-      tracevalidate TRACEDATA AREADATA
+      tracevalidate TRACE_FILE AREA_FILE
 
    -  Additionally the tool should be supplied with a few options:
 
    .. code:: bash
 
-      tracevalidate TRACEDATA AREADATA --snap-threshold 0.01 --fix --summary
+      tracevalidate TRACE_FILE AREA_FILE --snap-threshold 0.01 --fix --summary
 
    -  ``--snap-threshold`` represents the snapping threshold the data
       has been digitized with in meters (depends on coordinate system)
@@ -113,7 +113,7 @@ instead be done from the terminal, the same window we used to install
       the terminal after finishing.
 
 4. To summarize, paste the following code to the terminal and replace
-   ``TRACEDATA`` and ``AREADATA`` with paths to your data files, e.g.:
+   ``TRACE_FILE`` and ``AREA_FILE`` with paths to your data files, e.g.:
 
    .. code:: bash
 
@@ -210,6 +210,9 @@ First we must download the template notebook repository with ``git``.
 
    -  Is the starting section for analysis. Follow the guidance within
       the notebook itself to complete the network analysis.
+
+   -  You can *tab-complete* within quotes for filepaths in the notebook as
+      well.
 
 Final notes
 -----------
