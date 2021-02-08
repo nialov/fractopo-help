@@ -15,16 +15,18 @@ Setup
 
 2. Click on Launch new below ``Course Practical Deep Learning - 2020``
    or ``Geo-Python Lite`` heading. This will start a new temporary
-   Python notebook environment (Prefer Geo-Python if available). The
-   initialization will take some seconds.
+   Python notebook environment (Prefer ``Geo-Python Lite`` if
+   available). The initialization will take some seconds.
 3. Click on ``Open in browser`` after the link has popped up under
    Access column.
-4. Copy the password presented and proceed (proceeding will also
+4. ``Geo-Python Lite`` environment requires a password input stage but
+   if no password prompt is visible when opened you can skip 5. and 6.
+5. Copy the password presented and proceed (proceeding will also
    automatically copy the password to clipboard.)
-5. Input the password in the upper right corner prompt and proceed.
+6. Input the password in the upper right corner prompt and proceed.
 
 You will now be presented with a Jupyter Lab Python environment. This
-environment is temporary. Default lifetime is 6 hours. After
+environment is temporary. Default lifetime is 5-10 hours. After
 leaving/time runs out all data in the environment will be destroyed.
 Therefore setup must always be performed and results should be
 downloaded to your local storage.

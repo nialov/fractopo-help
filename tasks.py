@@ -10,8 +10,7 @@ def test(c):
     """
     Test notebook run and clean output afterwards.
     """
-    c.run("pipenv run ipython network.ipynb")
-    c.run("pipenv run jupyter nbconvert --clear-output --inplace network.ipynb")
+    c.run("nox --session test")
 
 
 @task

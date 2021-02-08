@@ -49,3 +49,16 @@ def lint(session):
     )
     # Lint notebooks with black-nb (all should be formatted.)
     session.run("black-nb", "--check", notebooks_name)
+
+
+@nox.session(python="3.8")
+def test(session):
+    """
+    Test installation of fractopo and notebook run.
+    """
+    session.install(
+        "git+https://github.com/nialov/fractopo#egg=fractopo", "jupyterlab", "ipython"
+    )
+    session.run("tracevalidate", "--help")
+    session.run("ipython", notebooks_name)
+    session.run("jupyter", "nbconvert", "--clear-output", "--inplace", notebooks_name)
