@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-fractopo = {git = "https://github.com/nialov/fractopo"}
+fractopo = {file = "https://github.com/nialov/fractopo/archive/master.zip"}
 jupyterlab = "*"
 nox = "*"
 invoke = "*"
