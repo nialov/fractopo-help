@@ -41,7 +41,7 @@ downloaded to your local storage.
 
    .. code:: bash
 
-      pip install git+https://github.com/nialov/fractopo#egg=fractopo
+      pip install fractopo==0.0.2
 
    -  The installation will take some time.
 
@@ -210,9 +210,8 @@ First we must download the template notebook repository with ``git``.
 
    -  Is the starting section for analysis. Follow the guidance within
       the notebook itself to complete the network analysis.
-
-   -  You can *tab-complete* within quotes for filepaths in the notebook as
-      well.
+   -  You can *tab-complete* within quotes for filepaths in the notebook
+      as well.
 
 Final notes
 -----------
