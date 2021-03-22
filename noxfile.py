@@ -56,9 +56,7 @@ def test(session):
     """
     Test installation of fractopo and notebook run.
     """
-    session.install(
-        "git+https://github.com/nialov/fractopo#egg=fractopo", "jupyterlab", "ipython"
-    )
+    session.install("fractopo==0.0.2", "jupyterlab", "ipython")
     session.run("tracevalidate", "--help")
     session.run("ipython", notebooks_name)
     session.run("jupyter", "nbconvert", "--clear-output", "--inplace", notebooks_name)
