@@ -97,11 +97,11 @@ instead be done from the terminal, the same window we used to install
 
    .. code:: bash
 
-      tracevalidate TRACE_FILE AREA_FILE --snap-threshold 0.01 --fix --summary
+      tracevalidate TRACE_FILE AREA_FILE --snap-threshold 0.001 --fix --summary
 
    -  ``--snap-threshold`` represents the snapping threshold the data
       has been digitized with in meters (depends on coordinate system)
-      i.e. ``0.01`` equals to 1 cm. For drone orthophotography data in
+      i.e. ``0.001`` equals to 1 mm. For drone orthophotography data in
       ETRS-TM35FIN coordinate system values between 0.01 and 0.001 are
       usually fine. You may/should experiment if your data differs in
       source and coordinate system.
@@ -117,14 +117,14 @@ instead be done from the terminal, the same window we used to install
 
    .. code:: bash
 
-      tracevalidate traces.gpkg target_area.gpkg --snap-threshold 0.01 --fix --summary
+      tracevalidate traces.gpkg target_area.gpkg --snap-threshold 0.001 --fix --summary
 
    -  If your files are in a folder, prefix the path with the folder
       name e.g.:
 
    .. code:: bash
 
-      tracevalidate MYFOLDER/traces.gpkg MYFOLDER/target_area.gpkg --snap-threshold 0.01 --fix --summary
+      tracevalidate MYFOLDER/traces.gpkg MYFOLDER/target_area.gpkg --snap-threshold 0.001 --fix --summary
 
    -  You can *tab-complete* file paths on the terminal window by
       pressing **Tab** with a partial or empty filename. E.g. if your
