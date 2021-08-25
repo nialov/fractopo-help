@@ -1,8 +1,8 @@
 Guide for setting up a fractopo environment on notebooks.csc.fi
 ===============================================================
 
-Requires University of Turku or GTK credentials. Usage is not officially
-supported by CSC.
+Requires University of Turku or Geological Survey of Finland credentials. Usage
+is not officially supported by CSC.
 
 Setup
 -----
@@ -41,7 +41,7 @@ downloaded to your local storage.
 
    .. code:: bash
 
-      pip install fractopo==0.0.2
+      pip install fractopo==0.1.4
 
    -  The installation will take some time.
 
