@@ -1,3 +1,5 @@
 results
 .ipynb_checkpoints
 *.html
+requirements.txt
+__pycache__

@@ -6,6 +6,14 @@ from invoke import task
 
 
 @task
+def requirements(c):
+    """
+    Sync requirements from poetry to requirements.txt.
+    """
+    c.run("nox --session requirements")
+
+
+@task(pre=[requirements])
 def test(c):
     """
     Test notebook run and clean output afterwards.
