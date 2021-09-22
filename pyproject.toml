@@ -6,7 +6,7 @@ authors = ["nialov <nikolasovaskainen@hotmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-fractopo = "==0.1.4"
+fractopo = "==0.2.1"
 jupyterlab = "*"
 nox = "*"
 invoke = "*"

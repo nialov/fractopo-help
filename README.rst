@@ -4,6 +4,17 @@ Guide for setting up a fractopo environment on notebooks.csc.fi
 Requires University of Turku or Geological Survey of Finland credentials. Usage
 is not officially supported by CSC.
 
+Guide changes
+-------------
+
+2021-09-22
+~~~~~~~~~~
+
+``fractopo`` version locked to 0.2.1 and ``tracevalidate`` is now a subcommand
+of ``fractopo``. Look carefully at new example commands and run ``fractopo
+--help`` and ``fractopo tracevalidate --help`` to see always up-to-date
+available commands and help.
+
 Setup
 -----
 
@@ -41,7 +52,7 @@ downloaded to your local storage.
 
    .. code:: bash
 
-      pip install fractopo==0.1.4
+      pip install fractopo==0.2.1
 
    -  The installation will take some time.
 
@@ -78,10 +89,10 @@ instead be done from the terminal, the same window we used to install
 
    .. code:: bash
 
-      tracevalidate --help
+      fractopo tracevalidate --help
 
    -  If the command works you will see a brief description of the
-      ``tracevalidate`` tool.
+      ``tracevalidate`` tool/subcommand.
    -  If the command throws an error, try closing the terminal and
       opening a new terminal and trying again. If it still does not
       work, repeat the Setup process from earlier.
@@ -91,13 +102,13 @@ instead be done from the terminal, the same window we used to install
 
    .. code:: bash
 
-      tracevalidate TRACE_FILE AREA_FILE
+      fractopo tracevalidate TRACE_FILE AREA_FILE
 
    -  Additionally the tool should be supplied with a few options:
 
    .. code:: bash
 
-      tracevalidate TRACE_FILE AREA_FILE --snap-threshold 0.001 --fix --summary
+      fractopo tracevalidate TRACE_FILE AREA_FILE --snap-threshold 0.001 --allow-fix --summary
 
    -  ``--snap-threshold`` represents the snapping threshold the data
       has been digitized with in meters (depends on coordinate system)
@@ -105,7 +116,7 @@ instead be done from the terminal, the same window we used to install
       ETRS-TM35FIN coordinate system values between 0.01 and 0.001 are
       usually fine. You may/should experiment if your data differs in
       source and coordinate system.
-   -  ``--fix`` Allows automatic fixing of e.g. multi-geometry
+   -  ``--allow-fix`` Allows automatic fixing of e.g. multi-geometry
       collection transformation to single geometries when the collection
       only actually consists of the single geometry. Highly recommended
       but will slightly alter the geometry data that is passed.
@@ -117,14 +128,14 @@ instead be done from the terminal, the same window we used to install
 
    .. code:: bash
 
-      tracevalidate traces.gpkg target_area.gpkg --snap-threshold 0.001 --fix --summary
+      fractopo tracevalidate traces.gpkg target_area.gpkg --snap-threshold 0.001 --allow-fix --summary
 
    -  If your files are in a folder, prefix the path with the folder
       name e.g.:
 
    .. code:: bash
 
-      tracevalidate MYFOLDER/traces.gpkg MYFOLDER/target_area.gpkg --snap-threshold 0.001 --fix --summary
+      fractopo tracevalidate MYFOLDER/traces.gpkg MYFOLDER/target_area.gpkg --snap-threshold 0.001 --allow-fix --summary
 
    -  You can *tab-complete* file paths on the terminal window by
       pressing **Tab** with a partial or empty filename. E.g. if your
@@ -218,3 +229,7 @@ Final notes
 
 The environment is **temporary**. Download all results when you are
 finished.
+
+Checkout ``fractopo-help/command_line_help.ipynb`` notebook for printed
+``--help`` outputs of ``fractopo`` command-line entrypoints. Run the notebook
+to get/update the help outputs!
