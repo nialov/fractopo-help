@@ -4,6 +4,7 @@ Nox test suite.
 
 
 from pathlib import Path
+
 import nox
 
 # DOCS_APIDOC_DIR_PATH = Path("docs_src/apidoc")
