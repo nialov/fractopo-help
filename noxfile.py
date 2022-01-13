@@ -10,7 +10,11 @@ import nox
 # DOCS_APIDOC_DIR_PATH = Path("docs_src/apidoc")
 # DOCS_DIR_PATH = Path("docs")
 # pipfile_lock = "Pipfile.lock"
-NOTEBOOKS_NAME = ("network.ipynb", "command_line_help.ipynb")
+NOTEBOOKS_NAME = (
+    "network.ipynb",
+    "network_no_topology.ipynb",
+    "command_line_help.ipynb",
+)
 TASKS_NAME = "tasks.py"
 NOXFILE_NAME = "noxfile.py"
 REQUIREMENTS_TXT = "requirements.txt"

@@ -1,11 +1,18 @@
 Guide for setting up a fractopo environment on notebooks.csc.fi
 ===============================================================
 
-Requires University of Turku or Geological Survey of Finland credentials. Usage
-is not officially supported by CSC.
+Requires University of Turku or Geological Survey of Finland credentials.
 
 Guide changes
 -------------
+
+2022-01-13
+~~~~~~~~~~
+
+``fractopo`` version locked to 0.2.3. Added notebook for analysing trace data
+when you do not want to determine topological properties of the trace network
+due to e.g. topologically invalid data. The notebook allows trace length
+distributions and azimuth rose plotting.
 
 2021-09-22
 ~~~~~~~~~~
@@ -52,7 +59,7 @@ downloaded to your local storage.
 
    .. code:: bash
 
-      pip install fractopo==0.2.1
+      pip install fractopo==0.2.3
 
    -  The installation will take some time.
 
@@ -201,13 +208,15 @@ First we must download the template notebook repository with ``git``.
    -  You can press the small folder icon to return to base working
       directory if you've navigated to some other folder already.
 
-4. Copy the ``network.ipynb`` to your working folder.
+4. Copy the ``network.ipynb`` and ``network_no_topology.ipynb`` to your working
+   folder.
 
    -  Right click file to Copy.
    -  Right click in directory to Paste.
 
 5. Double-click on the ``network.ipynb`` notebook file in your working
-   folder.
+   folder. (Or ``network_no_topology.ipynb`` if you want to analyse
+   data that is topologically invalid.)
 
 6. Navigate to the ``Data`` section.
 
