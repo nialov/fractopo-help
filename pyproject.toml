@@ -6,10 +6,11 @@ authors = ["nialov <nikolasovaskainen@hotmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-fractopo = "==0.2.2"
+fractopo = "==0.2.5"
 jupyterlab = "*"
 nox = "*"
 invoke = "*"
+black = {extras = ["jupyter"], version = "^22.1.0"}
 
 [tool.poetry.dev-dependencies]
 

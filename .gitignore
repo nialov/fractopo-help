@@ -3,3 +3,5 @@ results
 *.html
 requirements.txt
 __pycache__
+.direnv
+.envrc

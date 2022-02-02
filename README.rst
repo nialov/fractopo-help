@@ -6,6 +6,12 @@ Requires University of Turku or Geological Survey of Finland credentials.
 Guide changes
 -------------
 
+2022-02-02
+~~~~~~~~~~
+
+``fractopo`` version locked to 0.2.5. Fixed length distribution description
+attribute call.
+
 2022-01-13
 ~~~~~~~~~~
 
@@ -59,7 +65,7 @@ downloaded to your local storage.
 
    .. code:: bash
 
-      pip install fractopo==0.2.3
+      pip install fractopo==0.2.5
 
    -  The installation will take some time.
 

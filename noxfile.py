@@ -20,44 +20,17 @@ NOXFILE_NAME = "noxfile.py"
 REQUIREMENTS_TXT = "requirements.txt"
 
 
-@nox.session(python="3.8")
-def format(session):
+@nox.session(python="3.8", reuse_venv=True)
+def pre_commit(session):
     """
-    Format python files, notebooks and docs_src.
+    Format python files and notebooks.
     """
-    session.install("black", "black-nb", "isort")
+    session.install("pre-commit")
     # Format python files
-    session.run("black", TASKS_NAME, NOXFILE_NAME)
-    # Format python file imports
-    session.run(
-        "isort",
-        TASKS_NAME,
-        NOXFILE_NAME,
-    )
-    # Format notebooks
-    session.run("black-nb", *NOTEBOOKS_NAME)
+    session.run("pre-commit", "run", "--all-files")
 
 
-@nox.session(python="3.8")
-def lint(session):
-    """
-    Lint python files, notebooks and docs_src.
-    """
-    session.install("rstcheck", "sphinx", "black", "black-nb", "isort", "pylama")
-
-    # Lint python files with black (all should be formatted.)
-    session.run("black", "--check", TASKS_NAME, NOXFILE_NAME)
-    session.run(
-        "isort",
-        "--check-only",
-        TASKS_NAME,
-        NOXFILE_NAME,
-    )
-    # Lint notebooks with black-nb (all should be formatted.)
-    session.run("black-nb", "--check", *NOTEBOOKS_NAME)
-
-
-@nox.session(python="3.8")
+@nox.session(python="3.8", reuse_venv=True)
 def requirements(session):
     """
     Sync requirements from poetry to requirements.txt.
@@ -72,7 +45,7 @@ def requirements(session):
     )
 
 
-@nox.session(python="3.8")
+@nox.session(python="3.8", reuse_venv=True)
 def test(session: nox.Session):
     """
     Test installation of fractopo and notebook run.

@@ -14,5 +14,5 @@ cp fractopo-help/network_no_topology.ipynb .
 echo "Upgrading pip"
 pip install --upgrade pip
 
-echo "Installing fractopo==0.2.3"
-pip install fractopo==0.2.3
+echo "Installing fractopo==0.2.5"
+pip install fractopo==0.2.5

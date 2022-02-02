@@ -22,22 +22,14 @@ def test(c):
 
 
 @task
-def format(c):
+def pre_commit(c):
     """
-    Format everything.
+    Pre-commit check all files.
     """
-    c.run("nox --session format")
+    c.run("nox --session pre_commit")
 
 
-@task(pre=[format])
-def lint(c):
-    """
-    Lint everything.
-    """
-    c.run("nox --session lint")
-
-
-@task(pre=[format, lint, test])
+@task(pre=[pre_commit, requirements, test])
 def make(_):
     """
     Make all.
