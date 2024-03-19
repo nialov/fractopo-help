@@ -183,8 +183,8 @@ Analysis using the command-line
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 General instructions for using the command-line from the trace
-validation section (`Trace validation <Trace validation>`__) above apply also here for
-e.g. ``<Tab>`` completion.
+validation section (`Trace validation <#trace-validation>`__) above
+apply also here for e.g. ``<Tab>`` completion.
 
 1. If you don't have the terminal open, open a new one (click on +
    symbol -> ``Terminal``). You can clear a terminal of outputs by
