@@ -188,6 +188,13 @@ Trace network analysis
 Trace network analysis  can either be done in a notebook or using
 the command-line, similarly to trace validation.
 
+Note that the validation step does some automatic fixes to the trace
+data including converting all ``MultiLineStrings`` to ``LineStrings``.
+Consequently, you either need to use the output of the validated version
+in network analysis or make sure you save the trace data with geometries
+as ``LineStrings`` in your GIS-software of choice. Network analysis will
+fail if ``MultiLineStrings`` are in the trace data.
+
 Analysis using the command-line
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -305,5 +312,15 @@ First we must download the template notebook repository with ``git``.
 Final notes
 -----------
 
-The environment is **temporary**. Download all results when you are
-finished.
+-  The environment is **temporary**. Download all results when you are
+   finished.
+-  If you want to rerun analyses from the notebook, you should usually
+   use the *Restart Kernel and Run All Cells...* option at the top of
+   the notebook as this will take care of cleaning previous output
+   directories.
+-  Target area geometry type for network analysis must be a ``Polygon``
+   or ``MultiPolygon``. Multiple geometries are allowed.
+-  Issues related to the guidance provided here can be posted in
+   https://github.com/nialov/fractopo-help/issues
+-  Issues that you believe are related to ``fractopo`` functionality can
+   be posted here https://github.com/nialov/fractopo/issues
