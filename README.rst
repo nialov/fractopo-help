@@ -1,10 +1,16 @@
 Guide for setting up a fractopo environment on notebooks.csc.fi
-===============================================================
+================================================================
 
-Requires University of Turku or Geological Survey of Finland credentials.
+Requires *CSC*, *HAKA* or *Virtu* credentials for login.
 
 Guide changes
 -------------
+
+2024-03-19
+~~~~~~~~~~
+
+``fractopo`` version locked to 0.6.0. Updated documentation to fit
+changes of ``fractopo`` and ``notebooks.csc.fi``.
 
 2022-02-02
 ~~~~~~~~~~
@@ -31,45 +37,41 @@ available commands and help.
 Setup
 -----
 
-1. Go to notebooks.csc.fi and log in with University of Turku
-   credentials or GTK-credentials.
+1. Go to notebooks.csc.fi and log in with your credentials of choice.
+   E.g.
 
    -  *Haka Login* -> *University of Turku* -> *Select*
    -  *Virtu* -> *Government Identification Service* -> *Select*
 
-2. Click on Launch new below ``Course Practical Deep Learning - 2020``
-   or ``Geo-Python Lite`` heading. This will start a new temporary
-   Python notebook environment (Prefer ``Geo-Python Lite`` if
-   available). The initialization will take some seconds.
-3. Click on ``Open in browser`` after the link has popped up under
-   Access column.
-4. ``Geo-Python Lite`` environment requires a password input stage but
-   if no password prompt is visible when opened you can skip 5. and 6.
-5. Copy the password presented and proceed (proceeding will also
-   automatically copy the password to clipboard.)
-6. Input the password in the upper right corner prompt and proceed.
+2. Click on the *Start session* button on the right side of the screen
+   for the ``Jupyter Machine Learning`` or ``Geo-Python 2023``
+   environment.
+3. Wait for the environment to be created. The web page should
+   automatically enter the ``Jupyter Lab`` environment.
 
-You will now be presented with a Jupyter Lab Python environment. This
-environment is temporary. Default lifetime is 5-10 hours. After
-leaving/time runs out all data in the environment will be destroyed.
-Therefore setup must always be performed and results should be
-downloaded to your local storage.
+   -  You will now be presented with a Jupyter Lab Python environment.
+      This environment is temporary. Default lifetime is 4-8 hours
+      depending on the environment. After leaving/time runs out all data
+      in the environment will be destroyed with the exception of data in
+      the ``my-work`` folder of the ``Geo-Python 2023`` environment.
+      Therefore setup must always be performed and results should be
+      downloaded to your local storage.
 
-6. Click on the + icon in the top left corner.
+4. Click on the + icon in the top left corner.
 
-7. Under Other, click on Terminal.
+5. Under Other, click on Terminal.
 
-8. We will now install the ``fractopo`` Python package to the
+6. We will now install the ``fractopo`` Python package to the
    environment. Copy the following text exactly to the opened terminal
    prompt and press Enter:
 
    .. code:: bash
 
-      pip install fractopo==0.2.5
+      pip install fractopo==0.6.0
 
    -  The installation will take some time.
 
-9. After installation is finished, congratulations, you may now use
+7. After installation is finished, congratulations, you may now use
    ``fractopo`` to validate and analyze trace map data.
 
 Uploading data to the environment
@@ -121,7 +123,7 @@ instead be done from the terminal, the same window we used to install
 
    .. code:: bash
 
-      fractopo tracevalidate TRACE_FILE AREA_FILE --snap-threshold 0.001 --allow-fix --summary
+      fractopo tracevalidate TRACE_FILE AREA_FILE --snap-threshold 0.001
 
    -  ``--snap-threshold`` represents the snapping threshold the data
       has been digitized with in meters (depends on coordinate system)
@@ -129,31 +131,25 @@ instead be done from the terminal, the same window we used to install
       ETRS-TM35FIN coordinate system values between 0.01 and 0.001 are
       usually fine. You may/should experiment if your data differs in
       source and coordinate system.
-   -  ``--allow-fix`` Allows automatic fixing of e.g. multi-geometry
-      collection transformation to single geometries when the collection
-      only actually consists of the single geometry. Highly recommended
-      but will slightly alter the geometry data that is passed.
-   -  ``--summary`` will post a small summary of validation results in
-      the terminal after finishing.
 
 4. To summarize, paste the following code to the terminal and replace
    ``TRACE_FILE`` and ``AREA_FILE`` with paths to your data files, e.g.:
 
    .. code:: bash
 
-      fractopo tracevalidate traces.gpkg target_area.gpkg --snap-threshold 0.001 --allow-fix --summary
+      fractopo tracevalidate traces.gpkg target_area.gpkg --snap-threshold 0.001
 
    -  If your files are in a folder, prefix the path with the folder
       name e.g.:
 
    .. code:: bash
 
-      fractopo tracevalidate MYFOLDER/traces.gpkg MYFOLDER/target_area.gpkg --snap-threshold 0.001 --allow-fix --summary
+      fractopo tracevalidate MYFOLDER/traces.gpkg MYFOLDER/target_area.gpkg --snap-threshold 0.001
 
    -  You can *tab-complete* file paths on the terminal window by
-      pressing **Tab** with a partial or empty filename. E.g. if your
+      pressing ``<Tab>`` with a partial or empty filename. E.g. if your
       traces are in a file named *traces.gpkg* you can type *tr* and
-      press tab to autocomplete the filename. If there are colliding
+      press ``<Tab>`` to autocomplete the filename. If there are colliding
       filenames e.g., *traces_2.gpkg* in the same directory the
       completion will only occur until the common path between the
       files.
@@ -189,10 +185,68 @@ instead be done from the terminal, the same window we used to install
 Trace network analysis
 ----------------------
 
-Trace network analysis happens in the notebook environment. I've
-prepared a template notebook that you can simply fill with your trace
-and area data paths and some analysis will be performed by then just
-simply running the notebook without further edits.
+Trace network analysis  can either be done in a notebook or using
+the command-line, similarly to trace validation.
+
+Analysis using the command-line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+General instructions for using the command-line from the trace
+validation section above apply also here for e.g. ``<Tab>`` completion.
+
+1. If you don't have the terminal open, open a new one (click on +
+   symbol -> ``Terminal``). You can clear a terminal of outputs by
+   typing ``clear`` and pressing enter.
+
+2. To make sure the command is installed and working, paste the
+   following to the terminal and press enter:
+
+   .. code:: bash
+
+      fractopo network --help
+
+3. The ``network`` tool requires passing the trace and area data
+   in the following way:
+
+   .. code:: bash
+
+      fractopo network TRACE_FILE AREA_FILE
+
+   -  Additionally the tool should be supplied with a few options:
+
+   .. code:: bash
+
+      fractopo network TRACE_FILE AREA_FILE --snap-threshold 0.001 --determine-branches-nodes --name NAME
+
+   - ``--determine-branches-nodes`` enables determination of the
+      topology including defining the branches and nodes of the trace
+      data.
+
+   -  ``--name NAME`` will be used to define the name used in e.g.
+      figure titles.
+
+   -  Use ``fractopo network --help`` to see full listing of options that
+      can be used.
+
+4. To summarize, paste the following code to the terminal and replace
+   ``TRACE_FILE`` and ``AREA_FILE`` with paths to your data files
+   and ``NAME`` with a name for your trace data. e.g.:
+
+   .. code:: bash
+
+      fractopo network traces.gpkg target_area.gpkg --snap-threshold 0.001 --determine-branches-nodes --name NAME
+
+5. The tool will create a new folder in the current folder with
+   the analysis results.
+
+   -  Folder name is ``NAME_outputs``.
+
+Analysis in a notebook
+~~~~~~~~~~~~~~~~~~~~~~
+
+I've prepared a template notebook that you can simply fill with your
+trace and area data paths and some analysis will be performed by then
+just simply running the notebook without further edits.
 
 First we must download the template notebook repository with ``git``.
 
@@ -219,6 +273,10 @@ First we must download the template notebook repository with ``git``.
 
    -  Right click file to Copy.
    -  Right click in directory to Paste.
+   -  Note that after copying the notebooks, the paths to the default
+      data (``KB11``) included in the ``fractopo-help`` repository are
+      no longer valid and you **must** supply paths to your own data to
+      run the notebooks.
 
 5. Double-click on the ``network.ipynb`` notebook file in your working
    folder. (Or ``network_no_topology.ipynb`` if you want to analyse
@@ -239,12 +297,13 @@ First we must download the template notebook repository with ``git``.
    -  You can *tab-complete* within quotes for filepaths in the notebook
       as well.
 
+7. After filling the data section, you can run the notebook from the
+   beginning by pressing the *Restart the kernel and run all cells*
+   button at the top of the notebook. The button has a double arrow
+   symbol pointing to the right.
+
 Final notes
 -----------
 
 The environment is **temporary**. Download all results when you are
 finished.
-
-Checkout ``fractopo-help/command_line_help.ipynb`` notebook for printed
-``--help`` outputs of ``fractopo`` command-line entrypoints. Run the notebook
-to get/update the help outputs!
