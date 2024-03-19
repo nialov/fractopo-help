@@ -183,7 +183,7 @@ Analysis using the command-line
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 General instructions for using the command-line from the trace
-validation section (`Trace validation <>`__) above apply also here for
+validation section (`Trace validation <Trace validation>`__) above apply also here for
 e.g. ``<Tab>`` completion.
 
 1. If you don't have the terminal open, open a new one (click on +
