@@ -1,38 +1,22 @@
 Guide for setting up a fractopo environment on notebooks.csc.fi
 ================================================================
 
-Requires *CSC*, *HAKA* or *Virtu* credentials for login.
+Basic info
+----------
 
-Guide changes
--------------
+This guide requires *CSC*, *HAKA* or *Virtu* credentials for login to
+``notebooks.csc.fi``.
 
-2024-03-19
-~~~~~~~~~~
+Full documentation for ``fractopo`` is found here:
 
-``fractopo`` version locked to 0.6.0. Updated documentation to fit
-changes of ``fractopo`` and ``notebooks.csc.fi``.
+https://nialov.github.io/fractopo/
 
-2022-02-02
-~~~~~~~~~~
-
-``fractopo`` version locked to 0.2.5. Fixed length distribution description
-attribute call.
-
-2022-01-13
-~~~~~~~~~~
-
-``fractopo`` version locked to 0.2.3. Added notebook for analysing trace data
-when you do not want to determine topological properties of the trace network
-due to e.g. topologically invalid data. The notebook allows trace length
-distributions and azimuth rose plotting.
-
-2021-09-22
-~~~~~~~~~~
-
-``fractopo`` version locked to 0.2.1 and ``tracevalidate`` is now a subcommand
-of ``fractopo``. Look carefully at new example commands and run ``fractopo
---help`` and ``fractopo tracevalidate --help`` to see always up-to-date
-available commands and help.
+Use the full documentation to find out more about the different analysis
+methods and e.g. validation error explanations. The guidance below is
+meant to be a detailed workflow on setting up ``fractopo`` specifically
+on ``notebooks.csc.fi`` and running a basic set of validation and
+analysis i.e. getting started with ``fractopo`` without prior Python or
+command-line experience.
 
 Setup
 -----
@@ -199,7 +183,8 @@ Analysis using the command-line
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 General instructions for using the command-line from the trace
-validation section above apply also here for e.g. ``<Tab>`` completion.
+validation section (`Trace validation <>`__) above apply also here for
+e.g. ``<Tab>`` completion.
 
 1. If you don't have the terminal open, open a new one (click on +
    symbol -> ``Terminal``). You can clear a terminal of outputs by
@@ -324,3 +309,35 @@ Final notes
    https://github.com/nialov/fractopo-help/issues
 -  Issues that you believe are related to ``fractopo`` functionality can
    be posted here https://github.com/nialov/fractopo/issues
+
+Guide changes
+-------------
+
+2024-03-19
+~~~~~~~~~~
+
+``fractopo`` version locked to 0.6.0. Updated documentation to fit
+changes of ``fractopo`` and ``notebooks.csc.fi``.
+
+2022-02-02
+~~~~~~~~~~
+
+``fractopo`` version locked to 0.2.5. Fixed length distribution description
+attribute call.
+
+2022-01-13
+~~~~~~~~~~
+
+``fractopo`` version locked to 0.2.3. Added notebook for analysing trace data
+when you do not want to determine topological properties of the trace network
+due to e.g. topologically invalid data. The notebook allows trace length
+distributions and azimuth rose plotting.
+
+2021-09-22
+~~~~~~~~~~
+
+``fractopo`` version locked to 0.2.1 and ``tracevalidate`` is now a subcommand
+of ``fractopo``. Look carefully at new example commands and run ``fractopo
+--help`` and ``fractopo tracevalidate --help`` to see always up-to-date
+available commands and help.
+
