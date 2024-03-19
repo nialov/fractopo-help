@@ -1,0 +1,20 @@
+on:
+  push:
+
+jobs:
+  nix:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v9
+      - uses: DeterminateSystems/magic-nix-cache-action@v3
+      - uses: cachix/cachix-action@v13
+        with:
+          name: nialov
+      - name: Check with nix
+        run: |
+          nix flake check

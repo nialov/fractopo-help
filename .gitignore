@@ -5,3 +5,5 @@ requirements.txt
 __pycache__
 .direnv
 .envrc
+/.cache/
+/.pre-commit-config.yaml
