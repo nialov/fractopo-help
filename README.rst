@@ -302,7 +302,7 @@ Final notes
 -  If you want to rerun analyses from the notebook, you should usually
    use the *Restart Kernel and Run All Cells...* option at the top of
    the notebook as this will take care of cleaning previous output
-   directories.
+   directories through code at the start of the notebook.
 -  Target area geometry type for network analysis must be a ``Polygon``
    or ``MultiPolygon``. Multiple geometries are allowed.
 -  Issues related to the guidance provided here can be posted in
