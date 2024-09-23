@@ -1,11 +1,11 @@
-Guide for setting up a fractopo environment on notebooks.csc.fi
-================================================================
+Guide for setting up a fractopo environment on https://noppe.csc.fi/
+====================================================================
 
 Basic info
 ----------
 
 This guide requires *CSC*, *HAKA* or *Virtu* credentials for login to
-``notebooks.csc.fi``.
+https://noppe.csc.fi/ (previously ``notebooks.csc.fi``).
 
 Full documentation for ``fractopo`` is found here:
 
@@ -14,14 +14,14 @@ https://nialov.github.io/fractopo/
 Use the full documentation to find out more about the different analysis
 methods and e.g. validation error explanations. The guidance below is
 meant to be a detailed workflow on setting up ``fractopo`` specifically
-on ``notebooks.csc.fi`` and running a basic set of validation and
+on https://noppe.csc.fi/ and running a basic set of validation and
 analysis i.e. getting started with ``fractopo`` without prior Python or
 command-line experience.
 
 Setup
 -----
 
-1. Go to notebooks.csc.fi and log in with your credentials of choice.
+1. Go to https://noppe.csc.fi/ and log in with your credentials of choice.
    E.g.
 
    -  *Haka Login* -> *University of Turku* -> *Select*
@@ -313,11 +313,16 @@ Final notes
 Guide changes
 -------------
 
+2024-09-23
+~~~~~~~~~~
+
+Use new website for notebooks (https://noppe.csc.fi).
+
 2024-03-19
 ~~~~~~~~~~
 
 ``fractopo`` version locked to 0.6.0. Updated documentation to fit
-changes of ``fractopo`` and ``notebooks.csc.fi``.
+changes of ``fractopo`` and https://noppe.csc.fi/.
 
 2022-02-02
 ~~~~~~~~~~
